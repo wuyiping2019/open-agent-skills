@@ -1,0 +1,36 @@
+{
+  "skill_name": "readme",
+  "evals": [
+    {
+      "id": 1,
+      "name": "generate-single-module",
+      "prompt": "为 auth/auth-core 模块生成文档",
+      "expected_output": "生成 README.md 和 docs/concepts.md, docs/data.md 文件，标题格式符合 Writerside 规则",
+      "assertions": [
+        {"name": "has_readme", "description": "生成了 README.md 文件"},
+        {"name": "has_concepts", "description": "生成了 docs/concepts.md 文件"},
+        {"name": "correct_heading_format", "description": "三级标题无末尾点"}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "validate-docs",
+      "prompt": "验证 rate-limit-redis 模块的文档标题格式",
+      "expected_output": "运行验证脚本，输出标题格式检查结果",
+      "assertions": [
+        {"name": "runs_validation", "description": "执行了标题验证"},
+        {"name": "reports_results", "description": "输出了验证结果"}
+      ]
+    },
+    {
+      "id": 3,
+      "name": "generate-all-modules",
+      "prompt": "生成所有模块的文档",
+      "expected_output": "并发生成所有叶子模块的 README 和 docs 文件",
+      "assertions": [
+        {"name": "processes_multiple_modules", "description": "处理多个模块"},
+        {"name": "correct_doc_types", "description": "根据模块类型生成正确的文档"}
+      ]
+    }
+  ]
+}
