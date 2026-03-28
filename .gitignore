@@ -40,3 +40,7 @@ build/
 
 .idea
 .claude
+# Allow skill-readme
+!.claude/
+!.claude/skills/
+!.claude/skills/skill-readme/
