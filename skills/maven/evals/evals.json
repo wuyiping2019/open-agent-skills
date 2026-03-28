@@ -1,0 +1,40 @@
+{
+  "skill_name": "maven",
+  "evals": [
+    {
+      "id": 1,
+      "name": "basic-build",
+      "prompt": "执行 mvn clean install",
+      "expected_output": "查找 Maven 路径，验证后执行 clean install 命令",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "multi-args",
+      "prompt": "帮我执行 mvn clean install -DskipTests",
+      "expected_output": "正确传递多个参数，执行 clean install 并跳过测试",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "implicit-trigger",
+      "prompt": "编译这个 Java 项目",
+      "expected_output": "识别为 Maven 构建需求，触发 skill 执行 mvn compile",
+      "files": []
+    },
+    {
+      "id": 4,
+      "name": "dependency-query",
+      "prompt": "查看项目的依赖树",
+      "expected_output": "触发 skill 执行 dependency:tree",
+      "files": []
+    },
+    {
+      "id": 5,
+      "name": "module-build",
+      "prompt": "只构建 common 模块及其依赖",
+      "expected_output": "执行 mvn clean install -pl common -am",
+      "files": []
+    }
+  ]
+}
