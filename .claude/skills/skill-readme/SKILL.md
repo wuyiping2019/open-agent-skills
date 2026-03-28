@@ -1,31 +1,48 @@
 ---
 name: skill-readme
-description: 为技能仓库生成 README.md。当用户要求生成、更新或编写 README，或提到"生成README"、"更新README"、"编写README"时使用。扫描 skills/ 目录下的所有 skill 并创建标准化 README。
+description: |
+  为技能仓库生成 README.md。当用户要求生成、更新或编写 README，或提到"生成README"、"更新README"、"编写README"时使用。扫描 skills/ 目录下的所有 skill 并创建标准化 README。
+
+  支持本地项目和远程仓库。
 ---
 
 # Skill README
 
 扫描技能仓库并生成 README.md。
 
-## 快速开始
+## 命令
+
+| 命令 | 说明 |
+|------|------|
+| `generate` | 为本地项目生成 README.md |
+| `push` | 为远程仓库生成 README.md 并推送 |
+
+---
+
+## generate — 本地生成
 
 ```bash
-cd <readme-writer目录>
-bash scripts/generate.sh <项目根目录>
+bash <skill-readme>/scripts/generate.sh <项目根目录>
 ```
 
-脚本将 README.md 输出到项目根目录。
+输出 `README.md` 到项目根目录。
 
-## 脚本说明
+---
 
-`scripts/generate.sh` 执行以下操作：
+## push — 远程仓库生成并推送
 
-1. 扫描 `skills/` 目录下的所有 skill 文件夹
-2. 读取每个 `SKILL.md` 的 frontmatter（name、description）
-3. 生成 README.md，包含：
-   - 项目标题和描述
-   - Skills 表格（名称、描述、链接）
-   - 使用说明
+```bash
+bash <skill-readme>/scripts/push-readme.sh
+```
+
+此脚本会：
+1. 拉取远程仓库最新代码（`~/.skill-share/repo`）
+2. 扫描 `skills/` 目录生成 README.md
+3. 提交并推送到远程仓库
+
+成功输出 `README_SUCCESS`。
+
+---
 
 ## README 模板
 
@@ -41,11 +58,9 @@ Claude Code 个人技能仓库。
 | Skill | Description | Link |
 |-------|-------------|------|
 | skill-name | 描述内容 | [SKILL.md](skills/skill-name/SKILL.md) |
-
-## Usage
-
-如何安装和使用 skill。
 ```
+
+---
 
 ## 注意事项
 
