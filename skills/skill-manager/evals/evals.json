@@ -1,0 +1,35 @@
+{
+  "skill_name": "skill-manager",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "查看当前项目有哪些 skill 可用",
+      "expected_output": "使用 /skill-manager list 列出主仓库和本地项目空间的 skills",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "我想找一下有没有处理 PDF 文件的 skill，帮我搜索一下",
+      "expected_output": "使用 /skill-manager search pdf 搜索全网可用的 PDF 相关 skill",
+      "assertions": []
+    },
+    {
+      "id": 3,
+      "prompt": "从 anthropics/skills 仓库加载 docx skill 到当前项目",
+      "expected_output": "使用 /skill-manager load anthropics/skills docx 加载 skill",
+      "assertions": []
+    },
+    {
+      "id": 4,
+      "prompt": "我的主仓库配置是什么？查看当前同步状态",
+      "expected_output": "使用 /skill-manager status 查看配置和同步状态",
+      "assertions": []
+    },
+    {
+      "id": 5,
+      "prompt": "浏览 Anthropic 官方仓库有哪些 skill 可以用",
+      "expected_output": "使用 /skill-manager browse anthropic-skills 列出仓库中所有可用 skills",
+      "assertions": []
+    }
+  ]
+}

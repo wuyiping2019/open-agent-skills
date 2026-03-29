@@ -22,7 +22,8 @@ if [[ ! -f "$CONFIG_FILE" ]]; then
 {
   "repoUrl": "",
   "repoBranch": "main",
-  "skillsPath": "skills"
+  "skillsPath": "skills",
+  "proxy": ""
 }
 EOF
         echo "已创建默认配置文件: $CONFIG_FILE"

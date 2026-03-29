@@ -1,0 +1,14 @@
+[
+  {
+    "name": "anthropic-skills",
+    "description": "Anthropic 官方 skill 仓库",
+    "url": "https://github.com/anthropics/skills.git",
+    "tags": ["official", "anthropic"]
+  },
+  {
+    "name": "community-skills",
+    "description": "社区贡献的 skill 集合",
+    "url": "https://github.com/anthropics/skills.git",
+    "tags": ["community"]
+  }
+]

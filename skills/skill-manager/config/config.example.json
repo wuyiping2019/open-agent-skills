@@ -1,5 +1,6 @@
 {
   "repoUrl": "",
   "repoBranch": "main",
-  "skillsPath": "skills"
+  "skillsPath": "skills",
+  "proxy": ""
 }

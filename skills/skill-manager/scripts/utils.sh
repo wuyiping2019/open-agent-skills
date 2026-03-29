@@ -94,3 +94,15 @@ show_config() {
     echo "  Skills 路径: $(get_skills_path)"
     echo "  镜像目录: $MIRROR_DIR"
 }
+
+# 设置代理环境变量
+setup_proxy() {
+    local proxy=$(get_config "proxy" "")
+    if [[ -n "$proxy" ]]; then
+        export HTTP_PROXY="$proxy"
+        export HTTPS_PROXY="$proxy"
+        export http_proxy="$proxy"
+        export https_proxy="$proxy"
+        echo "PROXY_SET:$proxy"
+    fi
+}
