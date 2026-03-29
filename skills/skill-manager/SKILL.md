@@ -199,8 +199,24 @@ export PROJECT_DIR="<当前项目路径>"
 
 ## 配置文件
 
-配置存储在项目空间的 `config/config.json`：
+配置文件位于 `config/` 目录：
 
+| 文件 | 说明 | 是否推送 |
+|------|------|----------|
+| `config.example.json` | 配置模板（无敏感信息） | ✓ 推送 |
+| `config.json` | 本地配置（可能含敏感信息） | ✗ 不推送 |
+
+**配置模板** (`config.example.json`)：
+```json
+{
+  "repoUrl": "",
+  "repoBranch": "main",
+  "skillsPath": "skills",
+  "proxy": ""
+}
+```
+
+**本地配置** (`config.json`) - 首次使用时自动生成：
 ```json
 {
   "repoUrl": "git@github.com:user/skills.git",
